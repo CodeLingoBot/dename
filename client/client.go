@@ -269,7 +269,7 @@ func (c *Client) Modify(sk *[ed25519.PrivateKeySize]byte, name string, profile *
 	return c.Enact(NewSign(sk, OldSign(sk, MakeOperation(name, profile))), nil)
 }
 
-// VerifiyConsensus performs the low-level checks to see whether a set of
+// VerifyConsensus performs the low-level checks to see whether a set of
 // statements made by the servers is sufficient to consider the state contained
 // by them to be canonical.
 func (c *Client) VerifyConsensus(signedHashOfStateMsgs []*SignedServerMessage) (
